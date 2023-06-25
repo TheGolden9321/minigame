@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  background-color: rgb(16, 139, 153);
+}
+
+[class*=__container] {
+  margin: 0 auto;
+  max-width: 91.4285714286rem;
+  padding: 0 15px;
+}
+
+.header__title {
+  font-size: 3.5714285714rem;
+  text-align: center;
+  line-height: 2;
+}
+.header__title span {
+  font-weight: 700;
+  color: goldenrod;
+  font-style: italic;
+  text-shadow: 1px 1px 5px yellow;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+}
+.header__description {
+  margin-right: 20px;
+  font-size: 1.4285714286rem;
+  color: bisque;
+  flex: 0 1 50%;
+  letter-spacing: 0.05em;
+  max-width: 400px;
+}
+.header__start {
+  font-size: 1.7857142857rem;
+  color: rgb(136, 255, 0);
+  font-weight: 600;
+}
+.header__start span {
+  color: goldenrod;
+  padding: 0.32em 0.48em;
+  background-color: #060e6d;
+  letter-spacing: 0.028em;
+  border-radius: 0.5em;
+}
+
+.game {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.game__main {
+  flex: 1 1 auto;
+  margin-top: 10.7142857143rem;
+}
+.game__container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.game__column1 {
+  flex: 1 1 auto;
+}
+.game__play {
+  width: 50rem;
+  margin-bottom: 5rem;
+}
+.game__difficulty {
+  padding-right: 2.8571428571rem;
+  margin-left: 1.7857142857rem;
+}
+
+@keyframes game {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 500px;
+  }
+}
+.difficulty__title {
+  font-size: 2.2857142857rem;
+  color: rgb(39, 17, 69);
+  margin-bottom: 1.25em;
+  text-align: center;
+}
+.difficulty__buttons {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 1.3333333333em;
+       column-gap: 1.3333333333em;
+}
+.difficulty__button {
+  display: block;
+  background-color: yellowgreen;
+  font-size: 2.1428571429rem;
+  color: green;
+  font-weight: 700;
+  padding: 0.2333333333em 0.5em;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+.difficulty__button:hover {
+  background-color: rgb(193, 221, 137);
+}
+
+.circle {
+  background-color: rgb(11, 119, 41);
+  border-radius: 50%;
+  position: relative;
+  pointer-events: none;
+  box-shadow: 0px 0px 30px 5px rgb(65, 170, 65);
+}
+
+.easy {
+  width: 200px;
+  height: 200px;
+}
+
+.medium {
+  width: 150px;
+  height: 150px;
+}
+
+.hard {
+  width: 120px;
+  height: 120px;
+}
+
+.circle._active {
+  animation-name: game;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+  pointer-events: all;
+}
+
+.circle._active.playing {
+  animation-play-state: running;
+}
+
+.result {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8571428571rem;
+  width: 30%;
+  height: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px whitesmoke;
+  border: 1px solid black;
+}
+.result__text {
+  margin-bottom: 2.1428571429rem;
+}
+.result__button {
+  flex: 0 0 18px;
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.result__button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  top: 50%;
+  transform: translate(0, -50%) rotate(45deg);
+}
+.result__button::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  bottom: 50%;
+  transform: translate(0, 50%) rotate(-45deg);
+}
+
+.showresult .result {
+  display: flex;
+}
+.showresult .game {
+  opacity: 0.2;
+}
